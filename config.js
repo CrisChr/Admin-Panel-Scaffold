@@ -26,21 +26,21 @@ module.exports = {
           title: 'Agent',
           key: '/agent',
           path: '/agent',
-          icon: MenuIcon.Partner,
+          icon: 'Partner',
           scopeKey: 'debug'
         },
         {
           title: 'Quotation',
           key: '/quotation',
           path: '/quotation',
-          icon: MenuIcon.Template,
+          icon: 'Template',
           scopeKey: 'debug'
         },
         {
           title: 'Withdrawal',
           key: '/withdrawal',
           path: 'withdrawal',
-          icon: MenuIcon.Bill,
+          icon: 'Bill',
           scopeKey: 'debug'
         }
       ]

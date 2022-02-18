@@ -5,6 +5,7 @@ import figlet from "figlet";
 import { promisify } from "util";
 import {exec} from 'child_process';
 import ProjectTemplate from "./templates/project-template";
+import ConfigValidator from './validators/index';
 const {Command} = require('commander');
 const copydir = require('copy-dir');
 const readFile = promisify(fs.readFile);
@@ -26,7 +27,7 @@ program
    * @param config
    */
 const validateConfig = (config: Config) => {
-
+  return new ConfigValidator(config).run();
 }
 
 /**

@@ -75,6 +75,21 @@ export default class Validator {
         if(!path){
           this.error(`sub menu ${title} should have a path`);
         }
+
+        if(
+          ![
+            'Partner',
+            'Template',
+            'Bill'
+          ].includes(icon)
+        ){
+          this.error(`icon in sub menu ${title} should be one of ${['Partner', 'Template', 'Bill']}`);
+        }
+
+        if(scopeKey && typeof scopeKey !== 'string'){
+          this.error(`scope in sub menu ${title} should be a string`);
+        }
+
       })
     })
   }
