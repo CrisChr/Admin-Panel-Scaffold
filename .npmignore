@@ -1,0 +1,12 @@
+.history/
+docs/
+src/
+*.tgz
+.npmignore
+yarn.lock
+package-lock.json
+.fatherrc.ts
+aaa/
+test/
+.history/
+yarn.lock
