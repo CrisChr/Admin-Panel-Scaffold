@@ -2,7 +2,9 @@
   "name": "agency-scaffold",
   "version": "1.0.0",
   "main": "./lib/index.js",
-  "bin": "./lib/index.js",
+  "bin": {
+    "omni-agency": "./lib/index.js"
+  },
   "author": "Red Cai",
   "license": "MIT",
   "scripts": {
@@ -17,7 +19,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@babel/template": "^7.16.7",
     "@babel/types": "^7.17.0",
-    "chalk": "^5.0.0",
+    "chalk": "^4.1.2",
     "commander": "^9.0.0",
     "copy-dir": "^1.3.0",
     "ejs": "^3.1.6",

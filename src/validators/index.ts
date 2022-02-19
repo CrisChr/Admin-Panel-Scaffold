@@ -12,7 +12,7 @@ export default class Validator {
     throw Error();
   }
 
-  run() {
+  async run() {
     if(!this.config){
       throw Error('config is invalid');
     }

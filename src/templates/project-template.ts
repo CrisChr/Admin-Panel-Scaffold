@@ -23,7 +23,14 @@ export default class ProjectTemplate {
    */
   copyPackageJson() {
     const buffer = fs.readFileSync(
-      path.join(__dirname, '..', '..', 'templates', 'project', 'package.json'),
+      path.join(
+        __dirname,
+        '..',
+        '..',
+        'project-templates',
+        'project',
+        'package.json',
+      ),
     );
     const code = ejs.render(buffer.toString(), {
       projectName: this.config.projectName,
@@ -37,7 +44,7 @@ export default class ProjectTemplate {
    */
   copyIndexPage() {
     const buffer = fs.readFileSync(
-      path.join(__dirname, '..', '..', 'templates', 'index-page.tsx'),
+      path.join(__dirname, '..', '..', 'project-templates', 'index-page.tsx'),
     );
     const code = ejs.render(buffer.toString(), {
       homePagePath: this.config.homePagePath,

@@ -122,26 +122,26 @@ declare global {
   }
 
   interface ListPage {
-    type: 'Policy' | 'Claim' | 'Reimburse' | 'Quote' | 'Insure' | string;
-    columns: Column[];
-    colMax?: number | null;
-    noCustomize?: boolean;
-    import?: {
-      dataSource:
-        | string
-        | {
-            label: string;
-            value: string | number;
-          }[];
-      buttonText: string;
-      accept: string;
-    };
-    keyDataIndex: string;
-    filterConfig: Filter;
+    type: 'Policy' | 'Claim' | 'Reimburse' | 'Quote' | 'Insure' | 'Quotation' | 'Agent' | 'Withdrawal' | string;
+    // columns: Column[];
+    // colMax?: number | null;
+    // noCustomize?: boolean;
+    // import?: {
+    //   dataSource:
+    //     | string
+    //     | {
+    //         label: string;
+    //         value: string | number;
+    //       }[];
+    //   buttonText: string;
+    //   accept: string;
+    // };
+    // keyDataIndex: string;
+    // filterConfig: Filter;
     listApi: string;
-    detailApi: string;
-    detail: DetailPage;
-    productName?: string;
+    // detailApi: string;
+    // detail: DetailPage;
+    // productName?: string;
   }
 
   type DataIndex = string | string[];

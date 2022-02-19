@@ -10,11 +10,11 @@ export default class BasicTemplate {
   outputPath?: string;
 
   run() {
-    if (!this.processor) {
-      throw Error('No processor.');
-    }
+    // if (!this.processor) {
+    //   throw Error('No processor.');
+    // }
 
-    this.processor.run();
+    // this.processor.run();
     this.generate();
   }
 

@@ -1,28 +1,30 @@
 import path from 'path';
 import fs from 'fs';
+import ejs from 'ejs';
 import BasicTemplate from './basic-template';
 
-export default class ConfigTemplate extends BasicTemplate{
+export default class ServiceTemplate extends BasicTemplate{
   path: string;
   outputPath: string;
-  config: Config;
+  config: ListPage;
 
-  constructor(config: Config){
+  constructor(config: ListPage){
     super();
     this.path = path.join(
       __dirname,
       '..',
       '..',
       'project-templates',
-      'config',
-      'index.ts'
+      'list-page',
+      'service.ts'
     );
     this.outputPath = path.join(
       process.cwd(),
       'src',
-      'config',
-      'index.ts'
-    )
+      'pages',
+      config.type.toLocaleLowerCase(),
+      'service.ts'
+    );
     this.config = config;
     this.parse();
   }
@@ -33,6 +35,9 @@ export default class ConfigTemplate extends BasicTemplate{
 
   parse(): void {
     const buffer = fs.readFileSync(this.path);
-    super.parse(buffer.toString());
+    const code = ejs.render(buffer.toString(), {
+      listApi: this.config.listApi,
+    });
+    super.parse(code);
   }
 }

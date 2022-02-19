@@ -1,7 +1,6 @@
-import { MenuIcon } from 'iglooicon';
 
 module.exports = {
-  projectName: 'Agency Platform',
+  projectName: 'agency-platform',
   languages: [
     {
       title: 'EN',
@@ -44,6 +43,20 @@ module.exports = {
           scopeKey: 'debug'
         }
       ]
+    }
+  ],
+  pages: [
+    {
+      type: 'Agent',
+      listApi: '/v1/agency-platform-id/admin/users',
+    },
+    {
+      type: 'Quotation',
+      listApi: '/v1/agency-platform-id/admin/quotations',
+    },
+    {
+      type: 'Withdrawal',
+      listApi: '/v1/agency-platform-id/admin/withdrawals',
     }
   ]
 }
