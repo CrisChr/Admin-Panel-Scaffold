@@ -11,6 +11,9 @@ import ConfigValidator from './validators/index';
 import ListTemplate from "./templates/list-template";
 import ConfigTemplate from "./templates/config-template";
 import OtherTemplate from "./templates/other-template";
+import LocaleTemplate from "./templates/locale-template";
+import TypingsTemplate from "./templates/typings-template";
+import ServiceTemplate from "./templates/service-template";
 import { Command } from 'commander';
 const copydir = require('copy-dir');
 const readFile = promisify(fs.readFile);
@@ -88,7 +91,12 @@ const generagePages = async (config: Config) => {
     console.log(chalk.green(`start ${(page as ListPage).type} page...`));
     new OtherTemplate(page as ListPage);
     new ListTemplate(page as ListPage).run();
+    new ServiceTemplate(page as ListPage).run();
   });
+  console.log(chalk.green('extract locale resources...'));
+  await new LocaleTemplate(config).run();
+  console.log(chalk.green('start extract typings...'));
+  await new TypingsTemplate().run();
 
 }
 

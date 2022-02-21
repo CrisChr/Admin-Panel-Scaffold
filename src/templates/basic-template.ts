@@ -43,7 +43,6 @@ export default class BasicTemplate {
         ],
       ],
     });
-
     if (!ast) {
       throw new Error(`AST parse failed. Template path: ${this.path}`);
     }
